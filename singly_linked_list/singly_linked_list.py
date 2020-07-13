@@ -28,12 +28,21 @@ class LinkedList:
             self.tail.set_next(new_node)
             self.tail = new_node
 
+    def add_to_head(self, data):
+        new_node = Node(data)
+
+        if not self.head and not self.tail:
+            self.tail = new_node
+            self.head = new_node
+        else:
+            new_node.set_next(self.head)
+            self.head = new_node
+
     def remove_head(self):
         if self.head is None:
             return None
 
         data = self.head.get_data()
-
 
         if self.head is self.tail:
             self.head = None
@@ -48,7 +57,7 @@ class LinkedList:
         # If list empty return false
         if self.head == None:
             return False
-        
+
         current_node = self.head
 
         contained = False
