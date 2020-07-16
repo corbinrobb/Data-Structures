@@ -100,10 +100,10 @@ class BSTNode:
         while len(stack):
             removed = stack.pop()
             print(removed.value)
-            if removed.left:
-                stack.push(removed.left)
             if removed.right:
                 stack.push(removed.right)
+            if removed.left:
+                stack.push(removed.left)
 
     # Stretch Goals -------------------------
     # Note: Research may be required

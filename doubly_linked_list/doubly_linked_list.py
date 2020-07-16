@@ -168,15 +168,14 @@ class DoublyLinkedList:
         if node is self.head and node is self.tail:
             self.head = None
             self.tail = None
-        elif node == self.head or node == self.tail:
-            if node == self.head:
-                new_head = self.head.next
-                new_head.prev = None
-                self.head = new_head
-            if node == self.tail:
-                new_tail = self.tail.prev
-                new_tail.next = None
-                self.tail = new_tail
+        if node == self.head:
+            new_head = self.head.next
+            new_head.prev = None
+            self.head = new_head
+        elif node == self.tail:
+            new_tail = self.tail.prev
+            new_tail.next = None
+            self.tail = new_tail
         else:
             node.delete()
         self.length -= 1
