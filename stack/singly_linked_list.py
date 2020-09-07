@@ -44,6 +44,7 @@ class LinkedList:
 
         data = self.head.get_data()
 
+
         if self.head is self.tail:
             self.head = None
             self.tail = None
@@ -57,7 +58,7 @@ class LinkedList:
         # If list empty return false
         if self.head == None:
             return False
-
+        
         current_node = self.head
 
         contained = False
